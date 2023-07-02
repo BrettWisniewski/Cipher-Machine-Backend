@@ -20,9 +20,11 @@ const a_middleware_function = function (req, res, next) {
 
 app.get('/caesar', (req, res) => {
     console.log(req.body)
-    multiple = 2 * 2
+    sentenceChange = "RPTHPG"
+
     // send back the multiple
-    res.json({"multiple": multiple});
+    res.json({"sentence": sentenceChange});
+
    // res(multiple)
     });
 
