@@ -31,38 +31,7 @@ app.get('/caesar', (req, res) => {
     });
 
 app.post('/caesar', (req, res) => {
-    // console.log(req.body)
-    // // loop through the string that is the request
-    // function advanceStringByThree(str) {
-    //     let result = '';
-        
-    //     for (let i = 0; i < str.length; i++) {
-    //       let char = str[i];
-          
-    //       if (char.match(/[a-z]/i)) {
-    //         let code = str.charCodeAt(i);
-    //         let advancedCode = code + 3;
-            
-    //         if (char === char.toUpperCase()) {
-    //           // Uppercase letters
-    //           char = String.fromCharCode(((advancedCode - 65) % 26) + 65);
-    //         } else {
-    //           // Lowercase letters
-    //           char = String.fromCharCode(((advancedCode - 97) % 26) + 97);
-    //         }
-    //       }
-          
-    //       result += char;
-    //     }
-        
-    //     return result;
-    //   }
-      
-    //   // Example usage
-    //   const inputString = 'Hello, World!';
-    //   const advancedString = advanceStringByThree(inputString);
-    //   otherString  = advanceStringByThree(req.body.sentence)
-    //   console.log(advancedString);
+   
     const { sentence } = req.body;
     advancedString = sentence + " is the ciphered sentence"
       res.json({"sentence": advancedString});
@@ -72,38 +41,7 @@ app.post('/caesar', (req, res) => {
 
 
 app.post('/api/submit', (req, res) => {
-    // console.log(req.body)
-    // // loop through the string that is the request
-    // function advanceStringByThree(str) {
-    //     let result = '';
-        
-    //     for (let i = 0; i < str.length; i++) {
-    //       let char = str[i];
-          
-    //       if (char.match(/[a-z]/i)) {
-    //         let code = str.charCodeAt(i);
-    //         let advancedCode = code + 3;
-            
-    //         if (char === char.toUpperCase()) {
-    //           // Uppercase letters
-    //           char = String.fromCharCode(((advancedCode - 65) % 26) + 65);
-    //         } else {
-    //           // Lowercase letters
-    //           char = String.fromCharCode(((advancedCode - 97) % 26) + 97);
-    //         }
-    //       }
-          
-    //       result += char;
-    //     }
-        
-    //     return result;
-    //   }
-      
-    //   // Example usage
-    //   const inputString = 'Hello, World!';
-    //   const advancedString = advanceStringByThree(inputString);
-    //   otherString  = advanceStringByThree(req.body.sentence)
-    //   console.log(advancedString);
+    
     const { sentence } = req.body; // Access the 'sentence' property directly
 
   // Process the sentence data as needed
