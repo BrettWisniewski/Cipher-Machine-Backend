@@ -4,7 +4,79 @@ const app = express();
 app.use(express.json()); // for parsing application/json
 
 
+// all of this is new database stuff
+const { Pool } = require('pg');
 
+
+const pool = new Pool({
+  user: 'postgres',
+  host: 'localhost',
+  database: 'cipherdata',
+  password: 'thedata2011',
+  port: 5432, // Default PostgreSQL port is 5432
+});
+
+// Add mock data to a table
+const mockData = {
+    name: 'John Doe',
+    cipher: "RPTHPG",
+    rules: 'Mock data',
+  };
+  
+
+// Create a table
+pool.query(
+    `CREATE TABLE IF NOT EXISTS your_table (
+      id SERIAL PRIMARY KEY,
+      name VARCHAR(255),
+      cipher VARCHAR(255),
+      cipher_rules VARCHAR(255)
+    )`,
+    (error, results) => {
+      if (error) {
+        console.error('Error creating table:', error);
+      } else {
+        console.log('Table created or already exists!');
+      }
+    }
+  );
+  
+  // Check if the table exists
+  pool.query(
+    `SELECT EXISTS (
+      SELECT 1
+      FROM information_schema.tables
+      WHERE table_name = 'your_table'
+    )`,
+    (error, results) => {
+      if (error) {
+        console.error('Error checking table existence:', error);
+      } else {
+        const tableExists = results.rows[0].exists;
+        if (tableExists) {
+          console.log('Table exists!');
+        } else {
+          console.log('Table does not exist!');
+        }
+      }
+    }
+  );
+//   pool.query(
+//     'INSERT INTO your_table (name, age, email) VALUES ($1, $2, $3)',
+//     [mockData.name, mockData.age, mockData.email],
+//     (error, results) => {
+//       if (error) {
+//         console.error('Error inserting mock data:', error);
+//       } else {
+//         console.log('Mock data inserted successfully!');
+//       }
+//     }
+//   );
+
+// end of database stuff
+
+
++
 app.get('/api', (req, res) => {
 
     res.json({"users": ["user1", "user2", "user3", "user4"]});
