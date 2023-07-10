@@ -96,6 +96,23 @@ app.get('/caesar', (req, res) => {
     console.log(req.body)
     sentenceChange = "RPTHPG"
 
+
+    // this is on get so it will insert when appropriate data is given
+
+    // pool.query(
+    //     'INSERT INTO your_table (name, cipher, cipher_rules) VALUES ($1, $2, $3)',
+    //     ['Bob', "Caesar", 'Caesar cipher'],
+    //     (error, results) => {
+    //       if (error) {
+    //         console.error('Error inserting sentence into the database:', error);
+    //         res.status(500).json({ error: 'Failed to insert sentence into the database' });
+    //       } else {
+    //         console.log('Sentence inserted into the database successfully!');
+    //         res.json({ sentence: advancedString });
+    //       }
+    //     }
+    //   );
+
     // send back the multiple
     res.json({"sentence": sentenceChange});
 
@@ -114,6 +131,7 @@ app.post('/caesar', (req, res) => {
 
 app.post('/api/submit', (req, res) => {
     
+// added a comment
     const { sentence } = req.body; // Access the 'sentence' property directly
 
   // Process the sentence data as needed
@@ -128,3 +146,19 @@ app.post('/api/submit', (req, res) => {
 // app.get("/caesar", a_middleware_function);
 
 app.listen(5000, () => console.log('Server started on port 5000'));
+
+
+// // import React, {useEffect, useState} from 'react'
+// // want to import cube canvas here 
+// // threedimensional2011
+// // "Enigma Machine" (https://skfb.ly/oBwzU) by ASHISH is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+// import React, { useEffect, useState, useRef } from 'react';
+// import * as THREE from 'three';
+// import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+//  import CubeCanvas from './CubeCanvas'
+
+// https://www.youtube.com/watch?v=w3vs4a03y3I
+//C:\Users\bpw10\Desktop\RealFullStack\client\public\enigma_machine
+//client\public\enigma_machine
+
+//"Retro computer" (https://skfb.ly/ou69O) by Urpo is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
