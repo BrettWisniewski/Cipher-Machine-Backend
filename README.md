@@ -80,9 +80,3 @@ Copy code
 License
 This project is licensed under the MIT License.
 
-vbnet
-Copy code
-
-Replace the placeholders in the README template with your actual project details, such as the project name, description, GitHub repository URL, and relevant API endpoints. Additionally, update the API endpoints' descriptions to reflect their actual functionality.
-
-After updating the README, commit the changes to your repository and push them to GitHub. The README will be displayed on your repository's main page and will provide essential information for others who want to clone and run your project.
