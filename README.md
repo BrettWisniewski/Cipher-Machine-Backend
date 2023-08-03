@@ -83,16 +83,56 @@ const pool = new Pool({
 // More existing code....
 ```
 
+Now, let's create a new table in the database. The code to create the table is already provided in the app.js file:
+
+``` JavaScript// Existing code...
+// Existing code...
+
+const createTableQuery = `
+  CREATE TABLE IF NOT EXISTS cipher_table (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    rules TEXT,
+    hints TEXT[],
+    answer JSONB
+  )
+`;
+
+pool.query(createTableQuery, (err, result) => {
+  if (err) {
+    console.error('Unable to create table:', err);
+  } else {
+    console.log('Table created successfully');
+  }
+});
+
+// More existing code...
+```
+
+This code will create a table named cipher_table if it doesn't already exist. The table will have columns id, name, rules, hints, and answer. Feel free to customize the table structure to fit your specific needs.
+
 ### Running the Server
-In the backend folder, install the dependencies:
-bash
-Copy code
+To run the backend server, follow these steps:
+
+Make sure you have Node.js installed on your machine. If you don't have it, download and install it from the official website: https://nodejs.org.
+
+Open your terminal or command prompt and navigate to the backend folder.
+
+Install the required dependencies by running the following command:
+
+```bash
+
 npm install
-Start the server:
-bash
-Copy code
+```
+
+After the dependencies are installed, you can start the server by running the following command:
+```bash
+
 npm start
-The server will run on http://localhost:5000.
+```
+The server will start listening on port 5000, and you should see the message "Server started on port 5000" in the terminal.
+
+Congratulations! Your backend server is now set up and running. You can start making API requests to interact with the database and perform various operations.
 
 API Endpoints
 GET /data/allResults: Retrieve all results with a specific name.
