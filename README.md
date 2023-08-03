@@ -31,20 +31,22 @@ cd your-repo
 
 
 ### Database Setup
-Create a PostgreSQL database for the project.
+To set up the database for the project, follow these steps:
 
-Open the backend folder (where the server code is located) in Visual Studio Code or your preferred code editor.
+Make sure you have PostgreSQL installed on your machine. If you don't have it, download and install it from the official website: https://www.postgresql.org.
 
-In the backend folder, create a .env file and add your database credentials:
+Once PostgreSQL is installed, open the backend folder (where the server code is located) in your preferred code editor, like Visual Studio Code.
+
+In the backend folder, you'll find a file named .env. Open it and add your database credentials:
 
 makefile
 Copy code
 DB_USER=your_database_user
 DB_HOST=your_database_host
-DB_DATABASE=your_database_name
+DB_NAME=your_database_name
 DB_PASSWORD=your_database_password
 DB_PORT=your_database_port
-Replace the placeholders with your actual database credentials.
+Replace your_database_user, your_database_host, your_database_name, your_database_password, and your_database_port with your actual PostgreSQL database credentials.
 
 Running the Server
 In the backend folder, install the dependencies:
