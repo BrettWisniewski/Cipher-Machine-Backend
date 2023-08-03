@@ -23,12 +23,14 @@ Before you begin, make sure you have the following installed on your machine:
 
 ### Cloning the Repository
 
-1. Clone the repository to your local machine using Git:
+ Clone the repository to your local machine using Git:
 
-```bash
+bash
 git clone https://github.com/your-username/your-repo.git
 cd your-repo
-Database Setup
+
+
+### Database Setup
 Create a PostgreSQL database for the project.
 
 Open the backend folder (where the server code is located) in Visual Studio Code or your preferred code editor.
@@ -79,4 +81,6 @@ POST /api/submittransposition: Submit a sentence to get a transposition ciphered
 Copy code
 License
 This project is licensed under the MIT License.
+
+
 
