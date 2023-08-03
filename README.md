@@ -50,7 +50,22 @@ DB_PORT=your_database_port
 
 Replace your_database_user, your_database_host, your_database_name, your_database_password, and your_database_port with your actual PostgreSQL database credentials.
 
-Running the Server
+```// Existing code...
+
+const { Pool } = require('pg');
+
+const pool = new Pool({
+  user: 'name', // your userName
+  host: 'host', // your host
+  database: 'database', // your database name
+  password: 'password', // your password
+  port: 5432, // Default PostgreSQL port is 5432
+});
+
+// More existing code...
+```
+
+### Running the Server
 In the backend folder, install the dependencies:
 bash
 Copy code
