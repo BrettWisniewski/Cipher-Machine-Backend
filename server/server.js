@@ -35,86 +35,7 @@ pool.query(createTableQuery, (err, result) => {
   }
 });
 
-// Add mock data to a table
-// const mockData = {
-//     name: 'John Doe',
-//     cipher: "RPTHPG",
-//     rules: 'Mock data',
-//   };
-  
 
-// // Create a table
-// pool.query(
-//     `CREATE TABLE IF NOT EXISTS your_table (
-//       id SERIAL PRIMARY KEY,
-//       name VARCHAR(255),
-//       cipher VARCHAR(255),
-//       cipher_rules VARCHAR(255)
-//     )`,
-//     (error, results) => {
-//       if (error) {
-//         console.error('Error creating table:', error);
-//       } else {
-//         console.log('Table created or already exists!');
-//       }
-//     }
-//   );
-  
-//   // Check if the table exists
-//   pool.query(
-//     `SELECT EXISTS (
-//       SELECT 1
-//       FROM information_schema.tables
-//       WHERE table_name = 'your_table'
-//     )`,
-//     (error, results) => {
-//       if (error) {
-//         console.error('Error checking table existence:', error);
-//       } else {
-//         const tableExists = results.rows[0].exists;
-//         if (tableExists) {
-//           console.log('Table exists!');
-//         } else {
-//           console.log('Table does not exist!');
-//         }
-//       }
-//     }
-//   );
-//   pool.query(
-//     'INSERT INTO your_table (name, age, email) VALUES ($1, $2, $3)',
-//     [mockData.name, mockData.age, mockData.email],
-//     (error, results) => {
-//       if (error) {
-//         console.error('Error inserting mock data:', error);
-//       } else {
-//         console.log('Mock data inserted successfully!');
-//       }
-//     }
-//   );
-
-// end of database stuff
-
-
-// this is my view application
-
-
-
-// The commented code retrieves whole database
-// app.get('/data/allResults', (req, res) => {
-//   const getAllResultsQuery = `
-//     SELECT * FROM cipher_table
-//   `;
-
-//   pool.query(getAllResultsQuery, (err, result) => {
-//     if (err) {
-//       console.error('Error fetching all results:', err);
-//       res.sendStatus(500);
-//     } else {
-//       const results = result.rows;
-//       res.json(results);
-//     }
-//   });
-// });
 
 app.get('/data/allResults', (req, res) => {
   const { name } = req.query;
@@ -193,7 +114,7 @@ app.post('/data/reset', (req, res) => {
     VALUES ($1, $2, $3, $4)
   `;
 
-  // const values = [nameSentence || '', theCipherRule, responses, insideData];
+  
 
   pool.query(insertDataQuery, values, (err, result) => {
     if (err) {
@@ -231,23 +152,7 @@ app.get('/caesar', (req, res) => {
     sentenceChange = "RPTHPG"
 
 
-    // this is on get so it will insert when appropriate data is given
-
-    // pool.query(
-    //     'INSERT INTO your_table (name, cipher, cipher_rules) VALUES ($1, $2, $3)',
-    //     ['Bob', "Caesar", 'Caesar cipher'],
-    //     (error, results) => {
-    //       if (error) {
-    //         console.error('Error inserting sentence into the database:', error);
-    //         res.status(500).json({ error: 'Failed to insert sentence into the database' });
-    //       } else {
-    //         console.log('Sentence inserted into the database successfully!');
-    //         res.json({ sentence: advancedString });
-    //       }
-    //     }
-    //   );
-
-    // send back the multiple
+   
     res.json({"sentence": sentenceChange});
 
    // res(multiple)
@@ -302,26 +207,7 @@ app.post('/api/submitcaesar', (req, res) => {
   app.post('/api/submitconcealment', (req, res) => {
     try{
     const { sentence } = req.body; // Access the 'sentence' property directly
-    // let cipheredString = "";
-    // loop through sentence
-    // for each letter, add three random words to the string
-    // for (let i = 0; i < sentence.length; i++) {
-    //   let charCode = sentence.charCodeAt(i);
-      
-    // }
     
-    // const words = sentence.split(' '); // Split the sentence into an array of words
-    // const result = words.map((word) => {
-    //   const concealedWord = word.split('').map((char, index) => {
-    //     if (index > 0 && (index + 1) % 4 === 0) {
-    //       return '_'; // Conceal the character at the third position after each comma
-    //     }
-    //     return char;
-    //   });
-    //   return concealedWord.join('');
-    // });
-  
-    // const concealedSentence = result.join(', '); 
 
     const letters = ['a', 'e', 'i', 'o', 'u', 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'y', 'z'];
 
@@ -365,13 +251,7 @@ function returnedThing(something) {
     
     })
 
-  // app.post('/api/submittransposition', (req, res) => {
-  //   const { sentence } = req.body; // Access the 'sentence' property directly
-  //   let result = "";
-
-  // })
-
-// app.get("/caesar", a_middleware_function);
+  
 
 app.post('/api/submittransposition', (req, res) => {
 try{
@@ -422,17 +302,3 @@ catch (error) {
 app.listen(5000, () => console.log('Server started on port 5000'));
 
 
-// // import React, {useEffect, useState} from 'react'
-// // want to import cube canvas here 
-// // threedimensional2011
-// // "Enigma Machine" (https://skfb.ly/oBwzU) by ASHISH is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
-// import React, { useEffect, useState, useRef } from 'react';
-// import * as THREE from 'three';
-// import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-//  import CubeCanvas from './CubeCanvas'
-
-// https://www.youtube.com/watch?v=w3vs4a03y3I
-//C:\Users\bpw10\Desktop\RealFullStack\client\public\enigma_machine
-//client\public\enigma_machine
-
-//"Retro computer" (https://skfb.ly/ou69O) by Urpo is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
