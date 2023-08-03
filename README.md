@@ -1,6 +1,6 @@
 # RealFullStack
 
-GO TO THE FULL-STACK-CIPHER-FRONT FIRST AS THAT HAS THE ENTIRE PROJECT DESCRIPTION ALONG WITH CREDITS AND DIRECTIONS.
+GO TO THE FULL-STACK-CIPHER-FRONT FIRST AS THAT HAS THE ENTIRE PROJECT DESCRIPTION ALONG WITH CREDITS, LICENSE, and DIRECTIONS.
 
 ## Table of Contents
 
@@ -151,22 +151,7 @@ Congratulations! Your backend server is now set up and running. You can start ma
 - **Query Parameters:** `letter` (required)
 - **Description:** Get the first 3 results from the `cipher_table` where the `name` starts with the provided letter.
 
-### Reset Data
 
-- **URL:** `/data/reset`
-- **Method:** `POST`
-- **Request Body:** `insideData`, `nameSetence`, `theCipherRule`, `responses` (required)
-- **Description:** Insert new data into the `cipher_table`.
-
-### Caesar Endpoint
-
-- **URL:** `/caesar`
-- **Method:** `GET`
-- **Description:** Get the response with `"sentence": "RPTHPG"`.
-
-- **Method:** `POST`
-- **Request Body:** `sentence` (required)
-- **Description:** Return the response with the provided `sentence` along with `" is the ciphered sentence"` appended.
 
 ### Other Endpoints
 
@@ -176,10 +161,6 @@ Here are some other API endpoints:
 - **Method:** `GET`
 - **Description:** Return a response with an array of users.
 
-- **URL:** `/api/submit`
-- **Method:** `POST`
-- **Request Body:** `sentence` (required)
-- **Description:** Process the `sentence` data and return the response with `"sentence": " is the ciphered sentence"`.
 
 - **URL:** `/api/submitcaesar`
 - **Method:** `POST`
