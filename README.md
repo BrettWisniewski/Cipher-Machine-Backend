@@ -134,29 +134,69 @@ The server will start listening on port 5000, and you should see the message "Se
 
 Congratulations! Your backend server is now set up and running. You can start making API requests to interact with the database and perform various operations.
 
-API Endpoints
-GET /data/allResults: Retrieve all results with a specific name.
+### API Endpoints
+## API Endpoints
 
-GET /data/results: Retrieve results with names starting with a specific letter.
+### Get All Results
 
-POST /data/reset: Reset the data by inserting new records into the database.
+- **URL:** `/data/allResults`
+- **Method:** `GET`
+- **Query Parameters:** `name` (required)
+- **Description:** Get all results from the `cipher_table` based on the provided `name`.
 
-GET /api: Get a list of users.
+### Get Results by Letter
 
-GET /caesar: Get a caesar ciphered sentence.
+- **URL:** `/data/results`
+- **Method:** `GET`
+- **Query Parameters:** `letter` (required)
+- **Description:** Get the first 3 results from the `cipher_table` where the `name` starts with the provided letter.
 
-POST /caesar: Post a sentence to get a caesar ciphered result.
+### Reset Data
 
-POST /api/submit: Submit a sentence to get a ciphered result.
+- **URL:** `/data/reset`
+- **Method:** `POST`
+- **Request Body:** `insideData`, `nameSetence`, `theCipherRule`, `responses` (required)
+- **Description:** Insert new data into the `cipher_table`.
 
-POST /api/submitcaesar: Submit a sentence to get a caesar ciphered result.
+### Caesar Endpoint
 
-POST /api/submitconcealment: Submit a sentence to get a concealed result.
+- **URL:** `/caesar`
+- **Method:** `GET`
+- **Description:** Get the response with `"sentence": "RPTHPG"`.
 
-POST /api/submittransposition: Submit a sentence to get a transposition ciphered result.
+- **Method:** `POST`
+- **Request Body:** `sentence` (required)
+- **Description:** Return the response with the provided `sentence` along with `" is the ciphered sentence"` appended.
 
-Copy code
-License
+### Other Endpoints
+
+Here are some other API endpoints:
+
+- **URL:** `/api`
+- **Method:** `GET`
+- **Description:** Return a response with an array of users.
+
+- **URL:** `/api/submit`
+- **Method:** `POST`
+- **Request Body:** `sentence` (required)
+- **Description:** Process the `sentence` data and return the response with `"sentence": " is the ciphered sentence"`.
+
+- **URL:** `/api/submitcaesar`
+- **Method:** `POST`
+- **Request Body:** `sentence` (required)
+- **Description:** Process the `sentence` data using the Caesar cipher algorithm and return the response with the ciphered sentence.
+
+- **URL:** `/api/submitconcealment`
+- **Method:** `POST`
+- **Request Body:** `sentence` (required)
+- **Description:** Process the `sentence` data and return a response with three random letters appended to each character.
+
+- **URL:** `/api/submittransposition`
+- **Method:** `POST`
+- **Request Body:** `sentence` (required)
+- **Description:** Process the `sentence` data using the route cipher algorithm and return the response with the transposed sentence.
+
+### License
 This project is licensed under the MIT License.
 
 
