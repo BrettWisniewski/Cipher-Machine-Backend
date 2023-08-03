@@ -64,6 +64,23 @@ const pool = new Pool({
 
 // More existing code...
 ```
+Replace the connection information with the variables from your .env file:
+
+``` JavaScript// Existing code...
+
+// Existing code...
+
+const { Pool } = require('pg');
+const pool = new Pool({
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
+});
+
+// More existing code....
+```
 
 ### Running the Server
 In the backend folder, install the dependencies:
