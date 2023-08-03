@@ -7,12 +7,11 @@ app.use(express.json()); // for parsing application/json
 // // all of this is new database stuff
 const { Pool } = require('pg');
 
-
 const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'cipherdata',
-  password: 'thedata2011',
+  user: 'name', // your userName
+  host: 'host', // your host
+  database: 'database', // your database name
+  password: 'password', // your password
   port: 5432, // Default PostgreSQL port is 5432
 });
 
