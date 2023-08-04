@@ -1,6 +1,6 @@
 # RealFullStack
 
-GO TO THE FULL-STACK-CIPHER-FRONT FIRST AS THAT HAS THE ENTIRE PROJECT DESCRIPTION ALONG WITH CREDITS, LICENSE, and DIRECTIONS.
+Go to the CIPHER MACHINE FRONT FIRST as that has an overview of the project as well as credits and additional instructions
 
 ## Table of Contents
 
