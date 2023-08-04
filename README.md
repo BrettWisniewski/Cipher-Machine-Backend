@@ -1,4 +1,4 @@
-# RealFullStack
+# CIPHER-MACHINE-BACKEND
 
 Go to the CIPHER-MACHINE-FRONTEND FIRST as that has an overview of the project as well as credits and additional instructions
 
