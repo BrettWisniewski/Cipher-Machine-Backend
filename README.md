@@ -135,7 +135,7 @@ The server will start listening on port 5000, and you should see the message "Se
 Congratulations! Your backend server is now set up and running. You can start making API requests to interact with the database and perform various operations.
 
 ### API Endpoints
-## API Endpoints
+
 
 ### Get All Results
 
