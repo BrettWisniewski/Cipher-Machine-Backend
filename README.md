@@ -1,6 +1,6 @@
 # RealFullStack
 
-Go to the CIPHER MACHINE FRONTEND FIRST as that has an overview of the project as well as credits and additional instructions
+Go to the CIPHER-MACHINE-FRONTEND FIRST as that has an overview of the project as well as credits and additional instructions
 
 ## Table of Contents
 
